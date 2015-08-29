@@ -1,0 +1,9 @@
+com\hand\log\test.class
+com\hand\JDBC\ConnectionFactory.class
+com\hand\main\MainApp.class
+com\hand\log\Logging.class
+com\hand\daoImpl\FilmMapper.class
+com\hand\daoImpl\FilmImpl.class
+com\hand\DAO\FilmDAO.class
+com\hand\bean\Film.class
+com\hand\SpringExam7872\App.class

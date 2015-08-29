@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+
+	<!-- <bean id="logging" class="com.hand.log.Logging"></bean> <aop:config> 
+		<aop:aspect id="log" ref="logging"> <aop:pointcut id="check" expression="execution(* 
+		com.hand.DAOImpl.FilmImpl.insertFilm(..))"/> <aop:before pointcut-ref="check" 
+		method="beforeAdvice"/> <aop:after pointcut-ref="check" method="afterAdvice"/> 
+		<aop:after-returning pointcut-ref="check" returning="retVal" method="afterReturningAdvice"/> 
+		<aop:after-throwing pointcut-ref="check" throwing="ex" method="AfterThrowingAdvice"/> 
+		</aop:aspect> </aop:config> -->
+		
+
+	<!-- <aop:config>
+		<aop:aspect id="insert" ref="test">
+			<aop:pointcut
+				expression="excution 
+		(* com.hand.DAOImpl.FilmImpl.insertFilm(..))"
+				id="in" />
+			<aop:before method="beforetest"
+				pointcut="excution (* com.hand.daoImpl.FilmImpl.insertFilm(..))" />
+			<aop:after method="aftertest"
+				pointcut="excution (* com.hand.daoImpl.FilmImpl.insertFilm(..))" />
+		</aop:aspect>
+	</aop:config> -->
+	
+	<bean id="filmImpl" class="com.hand.daoImpl.FilmImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="test" class="com.hand.log.test"></bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
+		<property name="username" value="root" />
+		<property name="password" value="123456" />
+	</bean>
+
+</beans>
